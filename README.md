@@ -39,7 +39,7 @@ Version 1.1 was updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6.
 
 An abstraction/device that is built around the Max/MSP stutter~ object. This contains all features as br.stutter.b but with extras. This effect includes an auto re-triggering feature, auto-detection, adjustment of the phase (starting position) of the grains, and a refresher that restarts the grain when it reaches a certain position within the phase.
 
-For simpler version of this effect, try [br.stutter.a.1.0](https://github.com/guaguanco127/br.stutter.a.1.0) or [br.stutter.b](https://github.com/guaguanco127/br.stutter.b)
+For simpler version of this effect, try [br.stutter.a](https://github.com/guaguanco127/br.stutter.a) or [br.stutter.b](https://github.com/guaguanco127/br.stutter.b)
   
 **On/Off:** When Stutter is turned on, the signal is interrupted and a history of the signal is repeated based on the grain size. 
 
