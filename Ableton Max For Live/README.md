@@ -60,9 +60,11 @@ For simpler version of this effect, try [br.stutter.a](https://github.com/guagua
 
 **Refresh Button:** Press this button and the stutter grain will restart from the beginning. 
 
-**Refresh Mode:** Potential modes for automatically restarting the grain from the beginning. When "Off" is selected the "Refresh Phase" is reset to 1.0. When "Cascara" is selected, each grain will either play its full duration, or half of its duration. When "Prog" is selected, each grain will either play its full duration, or 66% of its duration. When "Random" is selected, each grain will refresh at a random point in  its duration. All settings except for "Off" reset the "Refresh Phase" to 0.0. 
+**Refresh Mode:** Potential modes for automatically restarting the grain from the beginning. When "Off" is selected the "Refresh Point" is reset to 1.0. When "Cascara" is selected, each grain will either play its full duration, or half of its duration. When "Prog" is selected, each grain will either play its full duration, or 66% of its duration. When "Random" is selected, each grain will refresh at a random point in  its duration. All settings except for "Off" reset the "Refresh Point" to 0.0. 
 
-**Refresh Phase:** While the "Refresh Mode" is turned off, adjusting the "Refresh Phase" adjusts the phase, or the starting position) of each grain.  
+**Refresh Point:** Where in each grain the refresher restarts it, between 0.0 and 1.0. At 1.0 (the default) the grain is never restarted early; at 0.5 it restarts halfway through. The Filter, Amp and Pan shapes stretch to fit the shortened grain.  
+
+**Phase:** Jumps the playing grain to a new position, between 0.0 (the start) and 1.0 (the end). The jump is crossfaded, so it doesn't click. Each refresh restarts the grain from the start.  
 
 **Size:** The size, in milliseconds, of the current grain that is playing. "Size 1" is compared with "Size 2" and a random size is chosen between these two parameters. The range is between 5 ms and 1000 ms. This is only a meter that tells you its size, you cannot adjust it. 
 
