@@ -19,7 +19,7 @@
 		"boxes": [
 			{
 				"box": {
-					"comment": "Pan Mode (int) 0 = Off, 1 = Sine, 2 = Right, 3 = tri, 4 = Left, 5 = alt, 6 = rand step, 7 = rand ramp, 8 = rand start. Default is 0",
+					"comment": "Pan Mode (Int) 0 = Off, 1 = Sine, 2 = Right, 3 = Tri, 4 = Left, 5 = Alt, 6 = Rand Step, 7 = Rand Ramp, 8 = Rand Start. Default 0",
 					"id": "obj-93",
 					"index": 24,
 					"maxclass": "inlet",
@@ -38,7 +38,7 @@
 			},
 			{
 				"box": {
-					"comment": "Amp Mode (int) 0 = Off, 1 = sine, 2 = up, 3 = tri, 4 = down, 5 = square, 6 = rand step, 7 = rand ramp. Default is 0",
+					"comment": "Amp Mode (Int) 0 = Off, 1 = Sine, 2 = Up, 3 = Tri, 4 = Down, 5 = Square, 6 = Rand Step, 7 = Rand Ramp. Default 0",
 					"id": "obj-91",
 					"index": 23,
 					"maxclass": "inlet",
@@ -57,7 +57,7 @@
 			},
 			{
 				"box": {
-					"comment": "Filte Ressonance (float) 0. - 0.85. Default is 0.",
+					"comment": "Resonance (Float) 0 - 0.85. Default 0",
 					"id": "obj-90",
 					"index": 22,
 					"maxclass": "inlet",
@@ -76,7 +76,7 @@
 			},
 			{
 				"box": {
-					"comment": "Freq 2 (Float) 40. to 20,000. Default is 8000.0",
+					"comment": "Freq 2 (Float) 40 - 20000 Hz. Default 8000",
 					"id": "obj-89",
 					"index": 21,
 					"maxclass": "inlet",
@@ -95,7 +95,7 @@
 			},
 			{
 				"box": {
-					"comment": "Freq 1 (Float) 40. to 20,000. Default is 80.0",
+					"comment": "Freq 1 (Float) 40 - 20000 Hz. Default 80",
 					"id": "obj-87",
 					"index": 20,
 					"maxclass": "inlet",
@@ -114,7 +114,7 @@
 			},
 			{
 				"box": {
-					"comment": "Filter Shape (int) 0 = sine, 1 = up, 2 = tri, 3 = down, 4 = square= 5 = rand step, 6 = rand ramp. Default is 0.",
+					"comment": "Filter Shape (Int) 0 = Sine, 1 = Up, 2 = Tri, 3 = Down, 4 = Square, 5 = Rand Step, 6 = Rand Ramp. Default 0",
 					"id": "obj-85",
 					"index": 19,
 					"maxclass": "inlet",
@@ -133,7 +133,7 @@
 			},
 			{
 				"box": {
-					"comment": "Filter Type (Int) 0 = off, 1 = Lowpass, 2 = Bandpass ",
+					"comment": "Filter Type (Int) 0 = Off, 1 = Lowpass, 2 = Bandpass. Default 0",
 					"id": "obj-81",
 					"index": 18,
 					"maxclass": "inlet",
@@ -152,7 +152,7 @@
 			},
 			{
 				"box": {
-					"comment": "Size 2 (Float) 5.0 - 1000. Default is 1000.",
+					"comment": "Size 2 (Float) 5 - 1000 ms. Default 1000",
 					"id": "obj-80",
 					"index": 17,
 					"maxclass": "inlet",
@@ -171,7 +171,7 @@
 			},
 			{
 				"box": {
-					"comment": "Size 1 (Float) 5.0 - 1000. Default is 5.0",
+					"comment": "Size 1 (Float) 5 - 1000 ms. Default 5",
 					"id": "obj-79",
 					"index": 16,
 					"maxclass": "inlet",
@@ -190,7 +190,7 @@
 			},
 			{
 				"box": {
-					"comment": "Refresh Phase (Float) 0. - 1.0, Default is 1.0",
+					"comment": "Refresh Point (Float) 0 - 1, 1 = never. Default 1",
 					"id": "obj-78",
 					"index": 15,
 					"maxclass": "inlet",
@@ -209,7 +209,7 @@
 			},
 			{
 				"box": {
-					"comment": "Refresh Mode (Int) 0 = off, 1 = Cascara, 2 = Prog, 3 = Random",
+					"comment": "Refresh Mode (Int) 0 = Off, 1 = Cascara, 2 = Prog, 3 = Random. Default 0",
 					"id": "obj-76",
 					"index": 14,
 					"maxclass": "inlet",
@@ -247,7 +247,7 @@
 			},
 			{
 				"box": {
-					"comment": "Transient Sensitivity (Float) 0. - 1.0, Default is 0.5",
+					"comment": "Sensitivity (Float) 0 - 1. Default 0.5",
 					"id": "obj-73",
 					"index": 12,
 					"maxclass": "inlet",
@@ -266,7 +266,7 @@
 			},
 			{
 				"box": {
-					"comment": "Transient Detect, (int)  0 = off, 1 = on, Default is 0",
+					"comment": "Transient Detect (Int) 0 = Off, 1 = On. Default 0",
 					"id": "obj-72",
 					"index": 11,
 					"maxclass": "inlet",
@@ -285,7 +285,7 @@
 			},
 			{
 				"box": {
-					"comment": "Auto 2 Time (Float) 100. to 2000. Default is 1000.0",
+					"comment": "Auto 2 (Float) 100 - 2000 ms. Default 1000",
 					"id": "obj-70",
 					"index": 10,
 					"maxclass": "inlet",
@@ -304,7 +304,7 @@
 			},
 			{
 				"box": {
-					"comment": "Auto 1 Time (Float) 100. to 2000. Default is 100.0",
+					"comment": "Auto 1 (Float) 100 - 2000 ms. Default 100",
 					"id": "obj-66",
 					"index": 9,
 					"maxclass": "inlet",
@@ -323,7 +323,7 @@
 			},
 			{
 				"box": {
-					"comment": "Auto Mode, (int) 0 = off, 1 = on, Default is 0",
+					"comment": "Auto Mode (Int) 0 = Off, 1 = On. Default 0",
 					"id": "obj-65",
 					"index": 8,
 					"maxclass": "inlet",
@@ -342,7 +342,7 @@
 			},
 			{
 				"box": {
-					"comment": "Mix Mode (Int) 0 = insert, 1 = gate. Default is 0.",
+					"comment": "Mix Mode (Int) 0 = Insert, 1 = Gate. Default 1",
 					"id": "obj-64",
 					"index": 7,
 					"maxclass": "inlet",
@@ -361,7 +361,7 @@
 			},
 			{
 				"box": {
-					"comment": "Latent Mode (Int) 0 = off, 1 = on, Default is 1",
+					"comment": "Latent Mode (Int) 0 = Off, 1 = On. Default 1",
 					"id": "obj-63",
 					"index": 6,
 					"maxclass": "inlet",
@@ -380,7 +380,7 @@
 			},
 			{
 				"box": {
-					"comment": "Speed (Float) -32 to 32. Default is 1.0",
+					"comment": "Speed (Float) -32 - 32. Default 1",
 					"id": "obj-50",
 					"index": 5,
 					"maxclass": "inlet",
@@ -399,7 +399,7 @@
 			},
 			{
 				"box": {
-					"comment": "Retrigger Stutter (Bang)",
+					"comment": "Retrigger (Bang)",
 					"id": "obj-44",
 					"index": 4,
 					"maxclass": "inlet",
@@ -418,7 +418,7 @@
 			},
 			{
 				"box": {
-					"comment": "On/Off (Toggle), 0 = off, 1 = on, Default is 0",
+					"comment": "Stutter On/Off (Int) 0 = Off, 1 = On. Default 0",
 					"id": "obj-21",
 					"index": 3,
 					"maxclass": "inlet",
@@ -17862,6 +17862,25 @@
 					],
 					"text": "t b b"
 				}
+			},
+			{
+				"box": {
+					"id": "obj-1200",
+					"maxclass": "inlet",
+					"index": 25,
+					"numinlets": 0,
+					"numoutlets": 1,
+					"outlettype": [
+						""
+					],
+					"patching_rect": [
+						2205.5,
+						25.0,
+						30.0,
+						30.0
+					],
+					"comment": "Phase (Float) 0 - 1, grain start position. Default 0"
+				}
 			}
 		],
 		"lines": [
@@ -19641,6 +19660,18 @@
 					],
 					"source": [
 						"obj-999",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-1200",
+						0
+					],
+					"destination": [
+						"obj-14",
 						0
 					]
 				}
