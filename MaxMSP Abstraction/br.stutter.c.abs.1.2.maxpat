@@ -247,7 +247,7 @@
 			},
 			{
 				"box": {
-					"comment": "Sensitivity (Float) 0 - 1. Default 0.5",
+					"comment": "Sensitivity (Float) 0 - 1, higher = softer attacks trigger. Default 0.5",
 					"id": "obj-73",
 					"index": 12,
 					"maxclass": "inlet",
@@ -4936,60 +4936,6 @@
 						"boxes": [
 							{
 								"box": {
-									"id": "obj-2",
-									"maxclass": "newobj",
-									"numinlets": 6,
-									"numoutlets": 1,
-									"outlettype": [
-										""
-									],
-									"patching_rect": [
-										61.0,
-										527.0,
-										110.0,
-										22.0
-									],
-									"text": "scale 0. 1. 0. 1. 0.5"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-1",
-									"maxclass": "newobj",
-									"numinlets": 1,
-									"numoutlets": 1,
-									"outlettype": [
-										"signal"
-									],
-									"patching_rect": [
-										45.5,
-										256.0,
-										35.0,
-										22.0
-									],
-									"text": "abs~"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-5",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"signal"
-									],
-									"patching_rect": [
-										73.83333333333326,
-										135.0,
-										29.5,
-										22.0
-									],
-									"text": "+~"
-								}
-							},
-							{
-								"box": {
 									"id": "obj-3",
 									"maxclass": "newobj",
 									"numinlets": 1,
@@ -5005,118 +4951,6 @@
 										22.0
 									],
 									"text": "mc.unpack~"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-36",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"signal"
-									],
-									"patching_rect": [
-										45.5,
-										203.0,
-										39.0,
-										22.0
-									],
-									"text": "gate~"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-35",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										""
-									],
-									"patching_rect": [
-										61.83333333333326,
-										489.0,
-										80.0,
-										22.0
-									],
-									"text": "speedlim 100"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-76",
-									"maxclass": "newobj",
-									"numinlets": 3,
-									"numoutlets": 4,
-									"outlettype": [
-										"signal",
-										"signal",
-										"signal",
-										"signal"
-									],
-									"patching_rect": [
-										45.49999999999993,
-										290.0,
-										68.0,
-										22.0
-									],
-									"text": "svf~ 30 0.1"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-69",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 2,
-									"outlettype": [
-										"bang",
-										""
-									],
-									"patching_rect": [
-										61.83333333333326,
-										629.0,
-										36.0,
-										22.0
-									],
-									"text": "sel 1"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-68",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"int"
-									],
-									"patching_rect": [
-										61.83333333333326,
-										574.0,
-										36.0,
-										22.0
-									],
-									"text": "> 0.5"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-47",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"float"
-									],
-									"patching_rect": [
-										61.83333333333326,
-										401.0,
-										84.0,
-										22.0
-									],
-									"text": "peakamp~ 10"
 								}
 							},
 							{
@@ -5191,117 +5025,245 @@
 										30.0
 									]
 								}
+							},
+							{
+								"box": {
+									"id": "d-m1",
+									"maxclass": "message",
+									"patching_rect": [
+										50.0,
+										150.0,
+										62.0,
+										22.0
+									],
+									"numinlets": 2,
+									"numoutlets": 1,
+									"text": "detect $1",
+									"outlettype": [
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "d-ex",
+									"maxclass": "newobj",
+									"patching_rect": [
+										317.0,
+										150.0,
+										260.0,
+										22.0
+									],
+									"numinlets": 1,
+									"numoutlets": 1,
+									"text": "expr 3. + 21. * pow(min(max($f1\\, 0.)\\, 1.)\\, 2.)",
+									"outlettype": [
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "d-m2",
+									"maxclass": "message",
+									"patching_rect": [
+										317.0,
+										185.0,
+										64.0,
+										22.0
+									],
+									"numinlets": 2,
+									"numoutlets": 1,
+									"text": "sensdb $1",
+									"outlettype": [
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "d-gen",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"signal"
+									],
+									"patcher": {
+										"fileversion": 1,
+										"appversion": {
+											"major": 9,
+											"minor": 1,
+											"revision": 4,
+											"architecture": "x64",
+											"modernui": 1
+										},
+										"classnamespace": "dsp.gen",
+										"rect": [
+											100.0,
+											100.0,
+											680.0,
+											720.0
+										],
+										"boxes": [
+											{
+												"box": {
+													"id": "obj-1",
+													"maxclass": "newobj",
+													"numinlets": 0,
+													"numoutlets": 1,
+													"outlettype": [
+														""
+													],
+													"patching_rect": [
+														20.0,
+														20.0,
+														30.0,
+														22.0
+													],
+													"text": "in 1"
+												}
+											},
+											{
+												"box": {
+													"id": "obj-2",
+													"maxclass": "newobj",
+													"numinlets": 0,
+													"numoutlets": 1,
+													"outlettype": [
+														""
+													],
+													"patching_rect": [
+														80.0,
+														20.0,
+														30.0,
+														22.0
+													],
+													"text": "in 2"
+												}
+											},
+											{
+												"box": {
+													"code": "// onset detector: one trigger per attack. A fast envelope (5 ms release) must rise above a slow one\n// (100 ms) by 'sensdb' dB; it re-arms once the fast envelope settles back (hysteresis = half the dB),\n// with a 50 ms lockout. in1/in2 = dry input L/R. out1 = 1 from the attack until re-armed (-> edge~).\nParam detect(0, min=0, max=1);\nParam sensdb(9, min=3, max=24);\nHistory fe(0);\nHistory se(0);\nHistory arm(1);\nHistory lk(0);\nf = fe;\nsl = se;\nar = arm;\nk = lk;\nlvl = 0;\nrise = 1;\nif (detect > 0.5) {\n    lvl = max(abs(in1), abs(in2));\n    f = max(lvl, f * exp(-1 / mstosamps(5)));\n    sl = sl + (f - sl) * (1 - exp(-1 / mstosamps(100)));\n    rise = dbtoa(sensdb);\n    k = max(k - 1, 0);\n    if (ar > 0.5) {\n        if (f > sl * rise && f > 0.003 && k <= 0) {\n            ar = 0;\n            k = mstosamps(50);\n        }\n    } else if (f < sl * sqrt(rise)) {\n        ar = 1;\n    }\n} else {\n    f = 0;\n    sl = 0;\n    ar = 1;\n    k = 0;\n}\nfe = f;\nse = sl;\narm = ar;\nlk = k;\nout1 = 1 - ar;\n",
+													"fontface": 0,
+													"fontname": "<Monospaced>",
+													"fontsize": 12.0,
+													"id": "obj-4",
+													"maxclass": "codebox",
+													"numinlets": 2,
+													"numoutlets": 1,
+													"outlettype": [
+														""
+													],
+													"patching_rect": [
+														20.0,
+														60.0,
+														620.0,
+														560.0
+													]
+												}
+											},
+											{
+												"box": {
+													"id": "obj-5",
+													"maxclass": "newobj",
+													"numinlets": 1,
+													"numoutlets": 0,
+													"patching_rect": [
+														20.0,
+														640.0,
+														35.0,
+														22.0
+													],
+													"text": "out 1"
+												}
+											}
+										],
+										"lines": [
+											{
+												"patchline": {
+													"destination": [
+														"obj-4",
+														0
+													],
+													"source": [
+														"obj-1",
+														0
+													]
+												}
+											},
+											{
+												"patchline": {
+													"destination": [
+														"obj-4",
+														1
+													],
+													"source": [
+														"obj-2",
+														0
+													]
+												}
+											},
+											{
+												"patchline": {
+													"destination": [
+														"obj-5",
+														0
+													],
+													"source": [
+														"obj-4",
+														0
+													]
+												}
+											}
+										]
+									},
+									"patching_rect": [
+										61.0,
+										240.0,
+										200.0,
+										22.0
+									],
+									"text": "gen~ @title br.delay.pitch.onset",
+									"varname": "gen~_onset"
+								}
+							},
+							{
+								"box": {
+									"id": "d-edge",
+									"maxclass": "newobj",
+									"patching_rect": [
+										61.0,
+										290.0,
+										45.0,
+										22.0
+									],
+									"numinlets": 1,
+									"numoutlets": 2,
+									"text": "edge~",
+									"outlettype": [
+										"bang",
+										"bang"
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "d-cm",
+									"maxclass": "comment",
+									"patching_rect": [
+										330.0,
+										240.0,
+										300.0,
+										60.0
+									],
+									"numinlets": 1,
+									"numoutlets": 0,
+									"text": "Onset detector: one trigger per attack (fast envelope jumping above a slow one by the Sensitivity amount, 3-24 dB) instead of a level check every 100 ms."
+								}
 							}
 						],
 						"lines": [
-							{
-								"patchline": {
-									"destination": [
-										"obj-76",
-										0
-									],
-									"source": [
-										"obj-1",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-68",
-										0
-									],
-									"source": [
-										"obj-2",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-5",
-										1
-									],
-									"source": [
-										"obj-3",
-										1
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-5",
-										0
-									],
-									"source": [
-										"obj-3",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-2",
-										0
-									],
-									"source": [
-										"obj-35",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-1",
-										0
-									],
-									"source": [
-										"obj-36",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-35",
-										0
-									],
-									"source": [
-										"obj-47",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-36",
-										0
-									],
-									"source": [
-										"obj-49",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-36",
-										1
-									],
-									"source": [
-										"obj-5",
-										0
-									]
-								}
-							},
 							{
 								"patchline": {
 									"destination": [
@@ -5316,49 +5278,109 @@
 							},
 							{
 								"patchline": {
+									"source": [
+										"obj-49",
+										0
+									],
 									"destination": [
-										"obj-68",
+										"d-m1",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"d-m1",
+										0
+									],
+									"destination": [
+										"d-gen",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-3",
+										0
+									],
+									"destination": [
+										"d-gen",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-3",
 										1
 									],
+									"destination": [
+										"d-gen",
+										1
+									]
+								}
+							},
+							{
+								"patchline": {
 									"source": [
 										"obj-51",
 										0
+									],
+									"destination": [
+										"d-ex",
+										0
 									]
 								}
 							},
 							{
 								"patchline": {
-									"destination": [
-										"obj-69",
+									"source": [
+										"d-ex",
 										0
 									],
-									"source": [
-										"obj-68",
+									"destination": [
+										"d-m2",
 										0
 									]
 								}
 							},
 							{
 								"patchline": {
+									"source": [
+										"d-m2",
+										0
+									],
+									"destination": [
+										"d-gen",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"d-gen",
+										0
+									],
+									"destination": [
+										"d-edge",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"d-edge",
+										0
+									],
 									"destination": [
 										"obj-52",
 										0
-									],
-									"source": [
-										"obj-69",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-47",
-										0
-									],
-									"source": [
-										"obj-76",
-										1
 									]
 								}
 							}
@@ -7566,42 +7588,6 @@
 						"boxes": [
 							{
 								"box": {
-									"id": "obj-5",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"float"
-									],
-									"patching_rect": [
-										52.0,
-										221.0,
-										74.0,
-										22.0
-									],
-									"text": "snapshot~ 1"
-								}
-							},
-							{
-								"box": {
-									"id": "obj-1",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										"int"
-									],
-									"patching_rect": [
-										87.0,
-										402.0,
-										29.5,
-										22.0
-									],
-									"text": "< 1."
-								}
-							},
-							{
-								"box": {
 									"id": "obj-78",
 									"maxclass": "message",
 									"numinlets": 2,
@@ -7915,65 +7901,6 @@
 							},
 							{
 								"box": {
-									"id": "obj-47",
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 2,
-									"outlettype": [
-										"bang",
-										""
-									],
-									"patching_rect": [
-										87.0,
-										446.0,
-										34.0,
-										22.0
-									],
-									"text": "sel 0"
-								}
-							},
-							{
-								"box": {
-									"format": 6,
-									"id": "obj-46",
-									"maxclass": "flonum",
-									"numinlets": 1,
-									"numoutlets": 2,
-									"outlettype": [
-										"",
-										"bang"
-									],
-									"parameter_enable": 0,
-									"patching_rect": [
-										87.0,
-										346.0,
-										50.0,
-										22.0
-									]
-								}
-							},
-							{
-								"box": {
-									"id": "obj-44",
-									"maxclass": "newobj",
-									"numinlets": 1,
-									"numoutlets": 3,
-									"outlettype": [
-										"",
-										"int",
-										"int"
-									],
-									"patching_rect": [
-										87.0,
-										297.0,
-										61.0,
-										22.0
-									],
-									"text": "change 0."
-								}
-							},
-							{
-								"box": {
 									"format": 6,
 									"id": "obj-43",
 									"maxclass": "flonum",
@@ -8083,25 +8010,6 @@
 							},
 							{
 								"box": {
-									"id": "obj-910",
-									"linecount": 2,
-									"maxclass": "newobj",
-									"numinlets": 2,
-									"numoutlets": 1,
-									"outlettype": [
-										""
-									],
-									"patching_rect": [
-										87.0,
-										374.0,
-										215.0,
-										22.0
-									],
-									"text": "expr $f1*($f2>=0.) + ($f1>0.)*(1.-$f1)*($f2<0.)"
-								}
-							},
-							{
-								"box": {
 									"comment": "Speed (sign sets refresh direction)",
 									"id": "obj-911",
 									"index": 4,
@@ -8121,92 +8029,179 @@
 							},
 							{
 								"box": {
-									"id": "obj-912",
+									"id": "r-gen",
 									"maxclass": "newobj",
 									"numinlets": 1,
-									"numoutlets": 3,
+									"numoutlets": 1,
 									"outlettype": [
-										"",
-										"int",
-										"int"
+										"signal"
 									],
+									"patcher": {
+										"fileversion": 1,
+										"appversion": {
+											"major": 9,
+											"minor": 1,
+											"revision": 4,
+											"architecture": "x64",
+											"modernui": 1
+										},
+										"classnamespace": "dsp.gen",
+										"rect": [
+											100.0,
+											100.0,
+											620.0,
+											360.0
+										],
+										"boxes": [
+											{
+												"box": {
+													"id": "obj-1",
+													"maxclass": "newobj",
+													"numinlets": 0,
+													"numoutlets": 1,
+													"outlettype": [
+														""
+													],
+													"patching_rect": [
+														20.0,
+														20.0,
+														30.0,
+														22.0
+													],
+													"text": "in 1"
+												}
+											},
+											{
+												"box": {
+													"code": "// refresh-point crossing, at signal rate (replaces snapshot~ 1 polling)\n// in1 = grain phase 0..1. Forward speed: fires when the phase reaches 'point'; reverse speed: measured from the end.\n// out1 = 1 while past the point (-> edge~ fires once per crossing). point 1 = never.\nParam point(1, min=0, max=1);\nParam speed(1);\nph = in1;\nif (speed < 0) {\n    ph = (in1 > 0) * (1 - in1);\n}\nout1 = ph >= point && point < 1;\n",
+													"fontface": 0,
+													"fontname": "<Monospaced>",
+													"fontsize": 12.0,
+													"id": "obj-4",
+													"maxclass": "codebox",
+													"numinlets": 1,
+													"numoutlets": 1,
+													"outlettype": [
+														""
+													],
+													"patching_rect": [
+														20.0,
+														60.0,
+														560.0,
+														220.0
+													]
+												}
+											},
+											{
+												"box": {
+													"id": "obj-5",
+													"maxclass": "newobj",
+													"numinlets": 1,
+													"numoutlets": 0,
+													"patching_rect": [
+														20.0,
+														300.0,
+														35.0,
+														22.0
+													],
+													"text": "out 1"
+												}
+											}
+										],
+										"lines": [
+											{
+												"patchline": {
+													"destination": [
+														"obj-4",
+														0
+													],
+													"source": [
+														"obj-1",
+														0
+													]
+												}
+											},
+											{
+												"patchline": {
+													"destination": [
+														"obj-5",
+														0
+													],
+													"source": [
+														"obj-4",
+														0
+													]
+												}
+											}
+										]
+									},
 									"patching_rect": [
-										130.0,
-										424.0,
-										50.0,
+										87.0,
+										330.0,
+										190.0,
 										22.0
 									],
-									"text": "change"
+									"text": "gen~ @title br.stutter.refresh",
+									"varname": "gen~_refresh"
+								}
+							},
+							{
+								"box": {
+									"id": "r-m1",
+									"maxclass": "message",
+									"patching_rect": [
+										144.0,
+										250.0,
+										55.0,
+										22.0
+									],
+									"numinlets": 2,
+									"numoutlets": 1,
+									"text": "point $1",
+									"outlettype": [
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "r-m2",
+									"maxclass": "message",
+									"patching_rect": [
+										400.0,
+										250.0,
+										58.0,
+										22.0
+									],
+									"numinlets": 2,
+									"numoutlets": 1,
+									"text": "speed $1",
+									"outlettype": [
+										""
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "r-edge",
+									"maxclass": "newobj",
+									"patching_rect": [
+										87.0,
+										380.0,
+										45.0,
+										22.0
+									],
+									"numinlets": 1,
+									"numoutlets": 2,
+									"text": "edge~",
+									"outlettype": [
+										"bang",
+										"bang"
+									]
 								}
 							}
 						],
 						"lines": [
-							{
-								"patchline": {
-									"destination": [
-										"obj-912",
-										0
-									],
-									"source": [
-										"obj-1",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-1",
-										1
-									],
-									"midpoints": [
-										153.5,
-										382.5,
-										107.0,
-										382.5
-									],
-									"source": [
-										"obj-43",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-46",
-										0
-									],
-									"source": [
-										"obj-44",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-910",
-										0
-									],
-									"source": [
-										"obj-46",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-86",
-										0
-									],
-									"source": [
-										"obj-47",
-										0
-									]
-								}
-							},
 							{
 								"patchline": {
 									"destination": [
@@ -8216,18 +8211,6 @@
 									"source": [
 										"obj-48",
 										1
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
-										"obj-44",
-										0
-									],
-									"source": [
-										"obj-5",
-										0
 									]
 								}
 							},
@@ -8487,19 +8470,6 @@
 							{
 								"patchline": {
 									"destination": [
-										"obj-5",
-										0
-									],
-									"order": 1,
-									"source": [
-										"obj-83",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
 										"obj-43",
 										0
 									],
@@ -8537,36 +8507,84 @@
 							},
 							{
 								"patchline": {
-									"destination": [
-										"obj-1",
+									"source": [
+										"obj-83",
 										0
 									],
-									"source": [
-										"obj-910",
+									"destination": [
+										"r-gen",
 										0
 									]
 								}
 							},
 							{
 								"patchline": {
-									"destination": [
-										"obj-910",
-										1
+									"source": [
+										"obj-43",
+										0
 									],
+									"destination": [
+										"r-m1",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"r-m1",
+										0
+									],
+									"destination": [
+										"r-gen",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
 									"source": [
 										"obj-911",
 										0
+									],
+									"destination": [
+										"r-m2",
+										0
 									]
 								}
 							},
 							{
 								"patchline": {
-									"destination": [
-										"obj-47",
+									"source": [
+										"r-m2",
 										0
 									],
+									"destination": [
+										"r-gen",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
 									"source": [
-										"obj-912",
+										"r-gen",
+										0
+									],
+									"destination": [
+										"r-edge",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"r-edge",
+										0
+									],
+									"destination": [
+										"obj-86",
 										0
 									]
 								}
