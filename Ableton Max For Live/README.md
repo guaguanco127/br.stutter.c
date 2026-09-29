@@ -1,4 +1,4 @@
-# Ableton Max for Live device: br.stutter.c.1.1
+# Ableton Max for Live device: br.stutter.c.1.2
 
 
 
@@ -7,17 +7,25 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.stutter.c.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
+Repository for br.stutter.c.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
 Additional programs can be found here: [https://github.com/guaguanco127/plugins](https://github.com/guaguanco127/plugins)
 
-Version 1.1 was updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
+
+## What's New in 1.2
+
+- **Stutters on each attack.** Transient Detect now listens for attacks (a sudden jump in level) instead of loudness: every new attack you play re-triggers the stutter once, and a held or sustained note no longer keeps re-triggering.
+- **Sensitivity** now sets how sudden a jump has to be to count as an attack (0 = only strong attacks, 1 = softer attacks too). The default of 0.5 suits most playing.
+- **Sample-accurate refresh.** The Refresh Point is now checked at audio rate instead of being polled every millisecond, so grains restart exactly at the point, with less load on Max (and Mira).
+- Nothing else changed; controls, inlets and presets are the same as 1.1.
 
 ## What's New in 1.1
 
@@ -54,9 +62,9 @@ For simpler version of this effect, try [br.stutter.a](https://github.com/guagua
 
 **Auto 2:** The second potential auto mode timings. "Auto 1" is compared with "Auto 2" and a random size is chosen between these two parameters. The range is between 100 ms and 2000 ms. The default is set to 1000 ms. 
 
-**Transient Detect:** When both "Stutter" and "Detect" are on, the effect and re-trigger will occur automatically based on the transient detection sensitivity settings. Detections cannot occur faster than 100 ms.   
+**Transient Detect:** When both "Stutter" and "Detect" are on, the effect and re-trigger will occur automatically based on the transient detection sensitivity settings. Each new attack re-triggers the stutter once; a held or sustained note does not keep re-triggering.   
 
-**Sensativity:** When both "Stutter" and "Detect" are on, this will determine how sensitive the transient detection is. Between 0. and 1., 0. is the lowest sensitivity, while 1. is the most sensitive. 0.5 is the default
+**Sensitivity:** When both "Stutter" and "Detect" are on, this sets how sudden a jump in level counts as an attack. Between 0. and 1.: 0. is the lowest sensitivity (only strong, sudden attacks), 1. is the most sensitive (softer attacks count too). 0.5 is the default.  
 
 **Refresh Button:** Press this button and the stutter grain will restart from the beginning. 
 
@@ -101,20 +109,16 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Macintosh:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects  
-Copy and paste br.stutter.c.1.1.amxd into that folder
+Copy and paste br.stutter.c.1.2.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect     
   
 4. Open Ableton Live. On the left-hand side, look for Max for Live > Max Audio Effect and then the name of this device.
 
-5. Either double-click on the device, or drag/drop it onto the track where you wish to use it.  
-    
+5. Either double-click on the device, or drag/drop it onto the track where you wish to use it.
 
+## Version History  
 
-
- 
-
-
-
-
-
+Version 1.2 replaced the transient detector with an attack (onset) detector (one re-trigger per attack) and made the Refresh Point sample-accurate.  
+Version 1.1 was updated with Max 9 (see What's New in 1.1).  
+Version 1.0 was created with Max/MSP 8.5.6.
