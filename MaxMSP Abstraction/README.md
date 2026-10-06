@@ -152,3 +152,7 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 Version 1.2 replaced the transient detector with an attack (onset) detector (one re-trigger per attack) and made the Refresh Point sample-accurate.  
 Version 1.1 was updated with Max 9 (see What's New in 1.1).  
 Version 1.0 was created with Max/MSP 8.5.6.
+
+## <a name="Credits"></a>Credits
+
+Built around stutter~ (Cycling '74).
