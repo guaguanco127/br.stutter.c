@@ -9,7 +9,7 @@ By Brian Riordan
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
 Repository for br.stutter.c.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
-Additional programs can be found here: [https://github.com/guaguanco127/plugins](https://github.com/guaguanco127/plugins)
+Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
