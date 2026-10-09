@@ -10,7 +10,7 @@
         },
         "classnamespace": "box",
         "rect": [ 85.0, 104.0, 1350.0, 800.0 ],
-        "description": "_br.stutter.c.example.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
+        "description": "_br.stutter.c.example.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
         "showontab": 1,
         "boxes": [
             {
@@ -23,7 +23,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 780.0, 0.0, 448.0, 47.0 ],
-                    "text": "_br.stutter.c.example.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around stutter~ (Cycling '74)."
+                    "text": "_br.stutter.c.example.1.4 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around stutter~ (Cycling '74)."
                 }
             },
             {
@@ -36,7 +36,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 15.0, 5.0, 400.0, 47.0 ],
-                    "text": "br.stutter.c 1.3: br.stutter.b plus Auto (stutters on its own), transient Detect, grain Refresh modes and Phase. NEW in 1.3: State outlet (see the tab)."
+                    "text": "br.stutter.c 1.4: br.stutter.b plus Auto (stutters on its own), transient Detect, grain Refresh modes and Phase. NEW in 1.4: Mix Mode is Thru / Aux, default Thru. State outlet: see the tab."
                 }
             },
             {
@@ -329,7 +329,7 @@
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
                     "maxclass": "bpatcher",
-                    "name": "br.stutter.c.abs.1.3.maxpat",
+                    "name": "br.stutter.c.abs.1.4.maxpat",
                     "numinlets": 25,
                     "numoutlets": 3,
                     "offset": [ 0.0, 0.0 ],
@@ -348,7 +348,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 124.0, 272.0, 420.0, 20.0 ],
-                    "text": "br.stutter.c.abs.1.3 (bpatcher). Stutter starts off: turn it on."
+                    "text": "br.stutter.c.abs.1.4 (bpatcher). Stutter starts off: turn it on."
                 }
             },
             {
@@ -361,7 +361,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 15.0, 506.0, 286.0, 60.0 ],
-                    "text": "Keep this example next to br.stutter.c.abs.1.3.maxpat. Mix Mode: Insert = dry passes while the stutter is off; Gate = silent while off."
+                    "text": "Keep this example next to br.stutter.c.abs.1.4.maxpat. Mix Mode: Thru = dry passes while the stutter is off; Aux = silent while off."
                 }
             },
             {
@@ -619,7 +619,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 0,
                                     "patching_rect": [ 420.0, 225.0, 129.0, 20.0 ],
-                                    "text": "mode (0 insert, 1 gate)"
+                                    "text": "mode (0 thru, 1 aux)"
                                 }
                             },
                             {
@@ -1388,7 +1388,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 881.0, 194.0, 227.0, 20.0 ],
-                    "text": "Mix Mode: off = Insert, on = Gate (inlet 7)"
+                    "text": "Mix Mode: off = Thru, on = Aux (inlet 7)"
                 }
             },
             {
