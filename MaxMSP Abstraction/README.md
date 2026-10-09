@@ -1,5 +1,5 @@
 # Max/MSP Abstraction:   
-## br.stutter.c.1.2
+## br.stutter.c.1.3
 
 
 
@@ -8,21 +8,31 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.stutter.c.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
+Repository for br.stutter.c.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1, 1.2 and 1.3 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [What is an abstraction?](#Abstraction)  
 [How To Install](#Install)  
-[How To Use](#Use) 
+[How To Use](#Use)  
+[State outlet](#State)  
+[Example Patch](#Example) 
  
  
+
+## What's New in 1.3
+
+- **State outlet** (abstraction only): a new last outlet sends every setting as a named message the moment it changes (`on`, `speed`, `latent`, `mode`, `auto`, `auto1`, `auto2`, `detect`, `sensitivity`, `refreshmode`, `refreshpoint`, `size1`, `size2`, `filtertype`, `filtershape`, `freq1`, `freq2`, `resonance`, `ampmode`, `panmode`, `phase`). See [State outlet](https://github.com/guaguanco127/br.stutter.c/tree/main/MaxMSP%20Abstraction#State).
+- Every inlet and the L/R outlets are unchanged, so 1.3 swaps in for 1.2 without rewiring.
+- **New example patch:** _br.stutter.c.example.1.3 with a demo source, messages into every inlet and a State outlet tab.
+- The controls have readable names (Stutter, Retrigger, Speed, Latent, Mix Mode, Auto, Detect, Refresh, Size 1, Size 2, Filter Type, Freq 1, Resonance, Amp Mode, Pan Mode, Phase and more), so presets, pattr and Live's automation show them clearly.
 
 ## What's New in 1.2
 
@@ -105,15 +115,15 @@ For simpler version of this effect, try [br.stutter.a](https://github.com/guagua
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.stutter.c.abs.1.2.maxpat inside of the same folder as the Max patch you are using.    
+2. Copy and paste br.stutter.c.abs.1.3.maxpat inside of the same folder as the Max patch you are using.    
 
-3. In the Max patch you are using, create an object called br.stutter.c.abs.1.2 
+3. In the Max patch you are using, create an object called br.stutter.c.abs.1.3 
 
-4. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.stutter.c.abs.1.2.maxpat located within the same folder as your project. 
+4. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.stutter.c.abs.1.3.maxpat located within the same folder as your project. 
 
 ## <a name="Use"></a>How To Use
 
-The first two inlets are for the left and the right stereo signals. The two outlets are the left and right outputs.
+The first two inlets are for the left and the right stereo signals. The first two outlets are the left and right outputs; the third is the State outlet.
 
 Every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet in Max to see the same information.
 
@@ -145,10 +155,56 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 24 | Pan Mode | Int | 0 = Off, 1 = Sine, 2 = Right, 3 = Tri, 4 = Left, 5 = Alt, 6 = Rand Step, 7 = Rand Ramp, 8 = Rand Start | 0 |
 | 25 | Phase | Float | 0 - 1, grain start position | 0 |
 
+| Outlet | Output | Type |
+|---|---|---|
+| 1 | Left Out | Signal |
+| 2 | Right Out | Signal |
+| 3 | State | Messages: `<name> <value>` (see [State outlet](#State)) |
+
 **Upgrading from 1.0:** the Amp Width and Pan Spread inlets were removed, so Pan Mode moved from inlet 25 to inlet 24. Reconnect anything that was patched into the last two inlets. Inlet 25 is new in 1.1: Phase.
+
+## <a name="State"></a>State outlet
+
+The last outlet sends the current settings as named messages the moment they change, for example `on 1`, `speed -1.`, `size1 50.`. Clicking a control, numbers into the inlets and preset recalls all show up; repeats are filtered out. Use it to keep a display, Mira or another patch in sync. Pick them out by name with [route on speed latent mode auto auto1 auto2 detect sensitivity refreshmode refreshpoint size1 size2 filtertype filtershape freq1 freq2 resonance ampmode panmode phase], not by position, so your patch keeps working if a later version adds controls.
+
+| Name | Control | Values |
+|---|---|---|
+| on | Stutter | 0 = Off, 1 = On |
+| speed | Speed | -32 - 32 |
+| latent | Latent | 0 = Off, 1 = On |
+| mode | Mix Mode | 0 = Insert, 1 = Gate |
+| auto | Auto | 0 = Off, 1 = On |
+| auto1 | Auto 1 | 100 - 2000 ms |
+| auto2 | Auto 2 | 100 - 2000 ms |
+| detect | Detect | 0 = Off, 1 = On |
+| sensitivity | Sensitivity | 0 - 1 |
+| refreshmode | Refresh Mode | 0 = Off, 1 = Cascara, 2 = Prog, 3 = Random |
+| refreshpoint | Refresh Point | 0 - 1, 1 = never |
+| size1 | Size 1 | 5 - 1000 ms |
+| size2 | Size 2 | 5 - 1000 ms |
+| filtertype | Filter Type | menu index (see the inlet table) |
+| filtershape | Filter Shape | menu index |
+| freq1 | Freq 1 | 40 - 20000 Hz |
+| freq2 | Freq 2 | 40 - 20000 Hz |
+| resonance | Resonance | 0 - 0.85 |
+| ampmode | Amp Mode | menu index |
+| panmode | Pan Mode | menu index |
+| phase | Phase | 0 - 1 |
+
+Retrigger and Refresh Grain are buttons, not settings, so they are not reported. Menus report their index.
+
+## <a name="Example"></a>Example Patch
+
+Open _br.stutter.c.example.1.3.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+
+- **Source:** the demo saw plucks (220 Hz left, 330 Hz right) start when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
+- **Stutter:** turn it on (panel or toggle), press Retrigger for new grains, try the Speed and Size messages.
+- **Auto / Detect / Refresh:** turn on Auto or Detect to let it stutter on its own; try the Refresh modes.
+- **State outlet tab:** the numbers follow every setting as you change it on the panel or with the messages.
 
 ## Version History  
 
+Version 1.3 (10-09-2026) added a State outlet and an example patch to the abstraction, and readable control names.  
 Version 1.2 replaced the transient detector with an attack (onset) detector (one re-trigger per attack) and made the Refresh Point sample-accurate.  
 Version 1.1 was updated with Max 9 (see What's New in 1.1).  
 Version 1.0 was created with Max/MSP 8.5.6.

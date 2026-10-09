@@ -1,6 +1,6 @@
 # Max/MSP Patches, Abstractions, Externals, RNBO, VSTs, and Ableton Max for Live 
 
-## br.stutter.c.1.2
+## br.stutter.c.1.3
 
 
 
@@ -9,19 +9,27 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.stutter.c.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
+Repository for br.stutter.c.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1, 1.2 and 1.3 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Links
 
+[What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [Ableton Max for Live Device](https://github.com/guaguanco127/br.stutter.c/tree/main/Ableton%20Max%20For%20Live) To use inside of Ableton Suite   
 [Max/MSP Abstraction](https://github.com/guaguanco127/br.stutter.c/tree/main/MaxMSP%20Abstraction) To use as an abstraction within Max/MSP   
 
+
+## What's New in 1.3
+
+- **State outlet** (abstraction only): a new last outlet sends every setting as a named message the moment it changes (`on`, `speed`, `latent`, `mode`, `auto`, `auto1`, `auto2`, `detect`, `sensitivity`, `refreshmode`, `refreshpoint`, `size1`, `size2`, `filtertype`, `filtershape`, `freq1`, `freq2`, `resonance`, `ampmode`, `panmode`, `phase`). See [State outlet](https://github.com/guaguanco127/br.stutter.c/tree/main/MaxMSP%20Abstraction#State).
+- Every inlet and the L/R outlets are unchanged, so 1.3 swaps in for 1.2 without rewiring.
+- **New example patch:** _br.stutter.c.example.1.3 with a demo source, messages into every inlet and a State outlet tab.
+- The controls have readable names (Stutter, Retrigger, Speed, Latent, Mix Mode, Auto, Detect, Refresh, Size 1, Size 2, Filter Type, Freq 1, Resonance, Amp Mode, Pan Mode, Phase and more), so presets, pattr and Live's automation show them clearly.
 
 ## What's New in 1.2
 
@@ -100,13 +108,10 @@ For simpler version of this effect, try [br.stutter.a](https://github.com/guagua
 
 ## Version History  
 
+Version 1.3 (10-09-2026) added a State outlet and an example patch to the abstraction, and readable control names.  
 Version 1.2 replaced the transient detector with an attack (onset) detector (one re-trigger per attack) and made the Refresh Point sample-accurate.  
 Version 1.1 was updated with Max 9 (see What's New in 1.1).  
 Version 1.0 was created with Max/MSP 8.5.6.
-
-## <a name="Credits"></a>Credits
-
-Built around stutter~ (Cycling '74).
 
 ## <a name="Credits"></a>Credits
 
