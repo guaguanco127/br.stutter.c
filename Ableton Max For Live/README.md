@@ -1,4 +1,4 @@
-# Ableton Max for Live device: br.stutter.c.1.5
+# Ableton Max for Live device: br.stutter.c.1.6
 
 
 
@@ -7,13 +7,14 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.stutter.c.1.5, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
+Repository for br.stutter.c.1.6, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.c](https://github.com/guaguanco127/br.stutter.c)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 Versions 1.1 through 1.4 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.6](#whats-new-in-16)  
 [What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
@@ -21,6 +22,12 @@ Versions 1.1 through 1.4 were updated with Max 9. Version 1.0 was created with M
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
+
+## What's New in 1.6
+
+- **The filter, amp and pan shapes move again.** With Refresh Mode set to Off, a low Refresh Point (for example 0) still squeezed every shape into the very start of each grain, so Sine, Up, Tri, Down, Square and Rand Ramp sat still. Now the Refresh Point only changes the shapes while a Refresh Mode is on; with Refresh Mode Off each shape runs once across the whole grain.
+- **Rand Step, Square and Tri fixed.** The shapes were switching at 99% of each grain instead of halfway. Rand Step now picks a new value between Freq 1 and Freq 2 (or a new level or pan position) every cycle instead of getting stuck, Square switches halfway, and Tri is a real triangle.
+- Every inlet, outlet and control is unchanged, so 1.6 swaps in for 1.5 without rewiring, and presets load the same.
 
 ## What's New in 1.4
 
@@ -122,7 +129,7 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Macintosh:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects  
-Copy and paste br.stutter.c.1.5.amxd into that folder
+Copy and paste br.stutter.c.1.6.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect     
   
@@ -132,6 +139,7 @@ Copy and paste br.stutter.c.1.5.amxd into that folder
 
 ## Version History  
 
+Version 1.6 (11-04-2026) fixed the filter, amp and pan shapes: they no longer freeze when Refresh Mode is Off, and Rand Step, Square and Tri switch halfway through each cycle.  
 Version 1.4 (10-09-2026) renamed Mix Mode to Thru / Aux and fixed its swapped values (Thru, 0, is now the default).  
 Version 1.3 (10-09-2026) added a State outlet and an example patch to the abstraction, and readable control names.  
 Version 1.2 replaced the transient detector with an attack (onset) detector (one re-trigger per attack) and made the Refresh Point sample-accurate.  

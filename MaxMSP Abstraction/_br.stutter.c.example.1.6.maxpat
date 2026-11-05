@@ -15,7 +15,7 @@
             1350.0,
             800.0
         ],
-        "description": "_br.stutter.c.example.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
+        "description": "_br.stutter.c.example.1.6 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
         "showontab": 1,
         "boxes": [
             {
@@ -33,7 +33,7 @@
                         448.0,
                         47.0
                     ],
-                    "text": "_br.stutter.c.example.1.5 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around stutter~ (Cycling '74)."
+                    "text": "_br.stutter.c.example.1.6 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around stutter~ (Cycling '74)."
                 }
             },
             {
@@ -495,7 +495,7 @@
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
                     "maxclass": "bpatcher",
-                    "name": "br.stutter.c.abs.1.5.maxpat",
+                    "name": "br.stutter.c.abs.1.6.maxpat",
                     "numinlets": 25,
                     "numoutlets": 4,
                     "offset": [
@@ -532,7 +532,7 @@
                         420.0,
                         20.0
                     ],
-                    "text": "br.stutter.c.abs.1.5 (bpatcher). Stutter starts off: turn it on."
+                    "text": "br.stutter.c.abs.1.6 (bpatcher). Stutter starts off: turn it on."
                 }
             },
             {
@@ -550,7 +550,7 @@
                         286.0,
                         60.0
                     ],
-                    "text": "Keep this example next to br.stutter.c.abs.1.5.maxpat. Mix Mode: Thru = dry passes while the stutter is off; Aux = silent while off."
+                    "text": "Keep this example next to br.stutter.c.abs.1.6.maxpat. Mix Mode: Thru = dry passes while the stutter is off; Aux = silent while off."
                 }
             },
             {
